@@ -45,7 +45,7 @@ class Calculator(QWidget):
                       calc.buttonlog ,calc.buttonln ,calc.buttonbracket1 ,calc.buttonbracket2 ,calc.buttonequal ,
                       calc.buttonbackspace ,calc.buttonpercent, calc.buttontan, calc.buttonsin, calc.buttoncos ]
         for button in calc.all_button:
-            button.clicked.connect(calc.ButtonClicked)
+            button.clicked.connect(calc.DisplayText)
             button.clicked.connect(calc.SoundEffects)
 
         calc.display = QLineEdit(calc)
@@ -69,15 +69,13 @@ class Calculator(QWidget):
     def ButtonLayout(calc):
         Grid = QGridLayout()
 
-        Grid.addWidget(calc.buttonlog, 0, 0)
-        Grid.addWidget(calc.buttonln, 0, 1)
-        Grid.addWidget(calc.buttonpercent, 0, 2 , 1, 2)
+        Grid.addWidget(calc.buttonsin, 0, 0)
+        Grid.addWidget(calc.buttoncos, 0, 1)
+        Grid.addWidget(calc.buttontan, 0, 2 , 1, 2)
         
-
-        
-        Grid.addWidget(calc.buttonsin, 1, 0)
-        Grid.addWidget(calc.buttoncos, 1, 1)
-        Grid.addWidget(calc.buttontan, 1, 2)
+        Grid.addWidget(calc.buttonlog, 1, 0)
+        Grid.addWidget(calc.buttonln, 1, 1)
+        Grid.addWidget(calc.buttonpercent, 1, 2)
         Grid.addWidget(calc.buttonbackspace, 1, 3)
 
         Grid.addWidget(calc.buttonbracket1, 2, 0)
@@ -143,7 +141,7 @@ class Calculator(QWidget):
         except Exception as e:
             print(f"Error loading stylesheet: {e}")
 
-    def ButtonClicked(calc):
+    def DisplayText(calc):
         sender = calc.sender()
         try:
             if sender.text() == "=":
