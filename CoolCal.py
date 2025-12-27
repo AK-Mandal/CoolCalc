@@ -211,7 +211,7 @@ class Calculator(QWidget):
 def main():
     app = QApplication(sys.argv)
     calc = Calculator()
-    calc.setWindowTitle("CoolCalc")
+    calc.setWindowTitle("SigmaZ")
     calc.setGeometry(625, 400, 500, 600)
     calc.setWindowIcon(QIcon("CoolCalIcon.ico"))
     calc.show()
