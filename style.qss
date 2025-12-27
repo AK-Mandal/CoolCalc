@@ -1,0 +1,80 @@
+QWidget {
+    background-color: #0f172a; /* Very Dark Navy Blue */
+    color: #e5e7eb;           /* Off-White / Light Grey */
+    font-family: "Segoe UI";
+}
+
+#calculator_screen_container {
+    background-color: #020617; /* Near-Black Deep Navy */
+    border: 2px solid #1e293b;   /* Dark Slate Blue/Grey */
+    border-radius: 18px;
+    margin-bottom: 5px;
+}
+
+QLineEdit {
+    background-color: transparent;
+    border: none;
+    color: #38bdf8;           /* Bright Sky Blue */
+    font-size: 38px;
+    font-weight: bold;
+    padding: 0px;
+}
+
+QLineEdit#history {
+    font-size: 15px;
+    color: #64748b;           /* Slate Grey */
+    font-weight: normal;
+}
+
+QPushButton {
+    background-color: #1e293b; /* Dark Slate Blue/Grey */
+    color: #e5e7eb;           /* Off-White / Light Grey */
+    border: none;
+    border-radius: 18px;
+    min-width: 60px;
+    min-height: 60px;
+    font-size: 22px;
+}
+
+QPushButton:hover {
+    background-color: #b8820f; /* Ochre / Dark Goldenrod */
+    color: black;
+}
+
+QPushButton:pressed {
+    background-color: #0ea5e9; /* Deep Sky Blue */
+    color: black;
+}
+
+QPushButton[text="+"],
+QPushButton[text="-"],
+QPushButton[text="×"],
+QPushButton[text="/"] {
+    background-color: #7c3aed; /* Vivid Violet/Purple */
+    color: white;
+    font-weight: bold;
+}
+
+QPushButton[text="="] {
+    background-color: #22c55e; /* Bright Green */
+    color: black;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+QPushButton[text="C"],
+QPushButton[text="←"] {
+    background-color: #ef4444; /* Bright Red */
+    color: white;
+    font-weight: bold;
+}
+
+QPushButton[text="log"],
+QPushButton[text="ln"],
+QPushButton[text="%"],
+QPushButton[text="("],
+QPushButton[text=")"],
+QPushButton[text="^"] {
+    background-color: #0f766e; /* Deep Teal */
+    color: white;
+}
