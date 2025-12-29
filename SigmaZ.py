@@ -120,7 +120,6 @@ class Calculator(QWidget):
         calc.setLayout(MainLayout)
 
     
-
     def Style(calc):
         try:
             base_dir = os.path.dirname(os.path.abspath(__file__)) 
@@ -144,21 +143,7 @@ class Calculator(QWidget):
     def DisplayText(calc):
         sender = calc.sender()
         try:
-            if sender.text() == "=":
-                user_expression = calc.display.text()
-                expression = user_expression.replace("^", "**")
-                expression = expression.replace("×", "*")
-                expression = expression.replace("%", "/100")
-                expression = expression.replace("log", "math.log10")
-                expression = expression.replace("ln", "math.log")
-                result = str(eval(expression))
-                calc.display.setText(result)
-
-                if any(op in user_expression for op in "+-×/="):
-                        calc.history_list.append(f"{user_expression} = {result}")
-                        calc.history_list = calc.history_list[-3:]
-                        calc.history.setText("   ||   ".join(calc.history_list))
-            elif sender.text() == "C":
+            if sender.text() == "C":
                 calc.display.setText("0")
             elif sender.text() == "←":
                 if calc.display.text() == "0":
@@ -168,15 +153,34 @@ class Calculator(QWidget):
                         calc.display.setText("0")
                     else:
                         calc.display.setText(calc.display.text()[:-1]) 
-            else:
-                OPERATORS = "+-×/="
+            elif sender.text() in ["sin", "cos", "tan", "log", "ln"]: #auto add "(" after ["sin", "cos", "tan", "log", "ln"]
                 if calc.display.text() == "0":
-                    if sender.text() in OPERATORS:
+                    calc.display.setText(sender.text() + "(")
+                else:
+                    calc.display.setText(calc.display.text() + sender.text() + "(")
+            elif sender.text() == "=": #evaluate
+                user_expression = calc.display.text()
+                expression = user_expression.replace("^", "**")
+                expression = expression.replace("×", "*")
+                expression = expression.replace("%", "/100")
+                expression = expression.replace("log", "math.log10")
+                expression = expression.replace("ln", "math.log")
+                result = str(eval(expression))
+                calc.display.setText(result)
+
+                if any(op in user_expression for op in "+-×/=^") or any(func in user_expression 
+                                                                       for func in ["sin", "cos", "tan", "log", "ln"]): #history
+                        calc.history_list.append(f"{user_expression} = {result}")
+                        calc.history_list = calc.history_list[-3:]
+                        calc.history.setText("   ||   ".join(calc.history_list))
+            else: #display
+                if calc.display.text() == "0":
+                    if sender.text() in "+-×/=()%^":
                         return
                     calc.display.setText(sender.text())
-                elif sender.text() in OPERATORS and calc.display.text()[-1] in OPERATORS:
+                elif sender.text() in "+-×/=()%^" and calc.display.text()[-1] in "+-×/=()%^":
                     return    
-           
+
                 else:                   
                     calc.display.setText(calc.display.text() + sender.text())
         except  Exception as exception:
@@ -218,7 +222,10 @@ class Calculator(QWidget):
         if sender.text() in "C←":
             calc.sound3.stop()
             calc.sound3.play()
-        if sender.text() in "+-×/=%^()" or sender.text() == "ln" or sender.text() == "log":
+        if sender.text() in "+-×/=%^()":
+            calc.sound2.stop()
+            calc.sound2.play()
+        if sender.text() in ["sin", "cos", "tan", "log", "ln"]:
             calc.sound2.stop()
             calc.sound2.play()
 
