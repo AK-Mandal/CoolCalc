@@ -247,7 +247,7 @@ def main():
     app = QApplication(sys.argv)
     calc = Calculator()
     calc.setWindowTitle("SigmaZ")
-    calc.resize(600, 500)
+    calc.resize(400, 300)
     icon_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "SigmaZ_icon.ico")
     calc.setWindowIcon(QIcon(icon_path))
     calc.show()
