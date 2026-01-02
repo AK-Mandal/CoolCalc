@@ -161,7 +161,7 @@ class Calculator(QWidget):
         poly_buttonequal = QPushButton("=", calc)
         poly_buttonclear = QPushButton("C", calc)
         poly_buttonbackspace = QPushButton("←", calc)
-        poly_buttonsolve = QPushButton("SOLVE", calc)
+        poly_buttonsolve = QPushButton("Solve", calc)
         
         poly_button0 = QPushButton("0", calc)
         poly_button1 = QPushButton("1", calc)
@@ -203,17 +203,17 @@ class Calculator(QWidget):
         layout.addWidget(poly_buttonadd, 1, 2)
         layout.addWidget(poly_buttonsub, 1, 3)
         
-        # Row 2: C, ←, =, SOLVE
+        # Row 2: C, ←, =, Solve
         layout.addWidget(poly_buttonclear, 2, 0)
         layout.addWidget(poly_buttonbackspace, 2, 1)
         layout.addWidget(poly_buttonequal, 2, 2)
-        layout.addWidget(poly_buttonsolve, 2, 3)
+        layout.addWidget(poly_buttonsolve, 2, 3 )
         
         # Row 3-6: Number pad (7-9, 4-6, 1-3, 0)
         layout.addWidget(poly_button7, 3, 0)
         layout.addWidget(poly_button8, 3, 1)
         layout.addWidget(poly_button9, 3, 2)
-        layout.addWidget(poly_button0, 3, 3)  # 0 on top row for space
+        layout.addWidget(poly_button0, 3, 3) 
         
         layout.addWidget(poly_button4, 4, 0)
         layout.addWidget(poly_button5, 4, 1)
@@ -223,7 +223,6 @@ class Calculator(QWidget):
         layout.addWidget(poly_button2, 5, 1)
         layout.addWidget(poly_button3, 5, 2)
         
-        # Add spacing
         layout.setSpacing(16)
         layout.setContentsMargins(10, 10, 10, 10)
 

@@ -40,6 +40,8 @@ QPushButton:hover {
     color: black;
 }
 
+/* NORMAL MODE BUTTONS */
+
 QPushButton[text="+"],
 QPushButton[text="-"],
 QPushButton[text="×"],
@@ -77,4 +79,177 @@ QPushButton[text="sin"],
 QPushButton[text="cos"],
 QPushButton[text="tan"]{
     background-color: #7c3aed;
-    color:  #7DD3FC}
+    color: #7DD3FC;
+}
+
+/* POLYNOMIAL MODE SPECIFIC BUTTONS */
+
+QPushButton[text="mode"] {
+    background: qlineargradient(
+        x1:0, y1:0, x2:1, y2:1,
+        stop:0 #8b5cf6,
+        stop:1 #6366f1
+    );
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border: 2px solid #a78bfa;
+}
+
+QPushButton[text="mode"]:hover {
+    background: qlineargradient(
+        x1:0, y1:0, x2:1, y2:1,
+        stop:0 #a78bfa,
+        stop:1 #818cf8
+    );
+    border: 2px solid #c4b5fd;
+}
+
+QPushButton[text="x"] {
+    background: qlineargradient(
+        x1:0, y1:0, x2:0, y2:1,
+        stop:0 #06b6d4,
+        stop:1 #0891b2
+    );
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 28px;
+    font-style: italic;
+    border: 2px solid #22d3ee;
+}
+
+QPushButton[text="x"]:hover {
+    background: qlineargradient(
+        x1:0, y1:0, x2:0, y2:1,
+        stop:0 #22d3ee,
+        stop:1 #06b6d4
+    );
+    border: 2px solid #67e8f9;
+}
+
+QPushButton[text="Solve"] {
+    background: qlineargradient(
+        x1:0, y1:0, x2:1, y2:0,
+        stop:0 #10b981,
+        stop:1 #059669
+    );
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 2px;
+    border: 2px solid #34d399;
+}
+
+QPushButton[text="SOLVE"]:hover {
+    background: qlineargradient(
+        x1:0, y1:0, x2:1, y2:0,
+        stop:0 #34d399,
+        stop:1 #10b981
+    );
+    border: 2px solid #6ee7b7;
+    color: #000000;
+}
+
+QPushButton[text="SOLVE"]:pressed {
+    background: qlineargradient(
+        x1:0, y1:0, x2:1, y2:0,
+        stop:0 #059669,
+        stop:1 #047857
+    );
+}
+
+QPushButton[text="^"] {
+    background-color: #ea580c;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+QPushButton[text="^"]:hover {
+    background-color: #fb923c;
+    color: black;
+}
+
+#poly_mode QPushButton[text="="] {
+    background: qlineargradient(
+        x1:0, y1:0, x2:1, y2:1,
+        stop:0 #f59e0b,
+        stop:1 #d97706
+    );
+    color: white;
+    font-weight: bold;
+    font-size: 26px;
+    border: 2px solid #fbbf24;
+}
+
+#poly_mode QPushButton[text="0"],
+#poly_mode QPushButton[text="1"],
+#poly_mode QPushButton[text="2"],
+#poly_mode QPushButton[text="3"],
+#poly_mode QPushButton[text="4"],
+#poly_mode QPushButton[text="5"],
+#poly_mode QPushButton[text="6"],
+#poly_mode QPushButton[text="7"],
+#poly_mode QPushButton[text="8"],
+#poly_mode QPushButton[text="9"] {
+    background-color: #1e3a5f;
+    color: #e0f2fe;
+    font-weight: 600;
+}
+
+#poly_mode QPushButton[text="0"]:hover,
+#poly_mode QPushButton[text="1"]:hover,
+#poly_mode QPushButton[text="2"]:hover,
+#poly_mode QPushButton[text="3"]:hover,
+#poly_mode QPushButton[text="4"]:hover,
+#poly_mode QPushButton[text="5"]:hover,
+#poly_mode QPushButton[text="6"]:hover,
+#poly_mode QPushButton[text="7"]:hover,
+#poly_mode QPushButton[text="8"]:hover,
+#poly_mode QPushButton[text="9"]:hover {
+    background-color: #2563eb;
+    color: white;
+}
+
+#poly_mode QPushButton[text="+"],
+#poly_mode QPushButton[text="-"] {
+    background: qlineargradient(
+        x1:0, y1:0, x2:0, y2:1,
+        stop:0 #3b82f6,
+        stop:1 #2563eb
+    );
+    color: white;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+#poly_mode QPushButton[text="+"]:hover,
+#poly_mode QPushButton[text="-"]:hover {
+    background: qlineargradient(
+        x1:0, y1:0, x2:0, y2:1,
+        stop:0 #60a5fa,
+        stop:1 #3b82f6
+    );
+}
+
+#poly_mode QPushButton[text="C"],
+#poly_mode QPushButton[text="←"] {
+    background: qlineargradient(
+        x1:0, y1:0, x2:1, y2:0,
+        stop:0 #dc2626,
+        stop:1 #991b1b
+    );
+    color: white;
+    font-weight: bold;
+    border: 2px solid #ef4444;
+}
+
+#poly_mode QPushButton[text="C"]:hover,
+#poly_mode QPushButton[text="←"]:hover {
+    background: qlineargradient(
+        x1:0, y1:0, x2:1, y2:0,
+        stop:0 #ef4444,
+        stop:1 #dc2626
+    );
+    border: 2px solid #f87171;
+}
