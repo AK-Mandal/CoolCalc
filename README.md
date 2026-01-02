@@ -1,6 +1,7 @@
 🧮 SigmaZ Calculator
 
 Latest Version: Beta 2.0.0
+<img width="413" height="697" alt="Screenshot 2026-01-02 164052" src="https://github.com/user-attachments/assets/34374a33-9c78-475d-ad43-46efe19e3054" />
 
 SigmaZ is a modern, feature-rich calculator built with Python and PyQt6, designed to combine a clean interface with powerful mathematical capabilities. It supports both standard scientific calculations and polynomial equation solving in a single application.
 
